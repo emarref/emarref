@@ -1,1 +1,2 @@
-web/css/*.css
+.sass-cache
+_site
