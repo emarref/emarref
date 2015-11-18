@@ -465,7 +465,10 @@ h1, h2, h3, h4, h5, h6 {
 
 a, a:link, a:hover, a:visited, a:active {
   color: white;
-  text-decoration: underline; }
+  text-decoration: none;
+  border-bottom: 1px solid white; }
+  a.social, a:link.social, a:hover.social, a:visited.social, a:active.social {
+    border: none; }
 
 input, textarea, select {
   color: #333; }
