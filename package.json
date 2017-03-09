@@ -32,7 +32,7 @@
     "assets": "rsync -vruz assets/ public/",
     "build": "concurrently \"yarn views\" \"yarn styles\" \"yarn scripts -p\" \"yarn assets\"",
     "start": "concurrently --kill-others \"yarn views-watch\" \"yarn styles-watch\" \"yarn scripts-watch\" \"php -S 0.0.0.0:8080 -t public\"",
-    "deploy": "git-directory-deploy --directory public --branch master"
+    "deploy": "yarn build && git-directory-deploy --directory public --branch master"
   },
   "repository": {
     "type": "git",
