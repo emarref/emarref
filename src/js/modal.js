@@ -9,5 +9,6 @@ export default class Modal {
 
     show() {
         this.el.removeClass('hidden');
+        $('input', this.el)[0].focus();
     }
 }
