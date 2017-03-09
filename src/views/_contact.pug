@@ -1,0 +1,19 @@
+form#contact_form(action="https://formspree.io/emarref@gmail.com" method="POST")
+    h3 #[a.cancel(href="#") &times;] Contact Me
+    p Drop me a line by completing the form below.
+    .form-group
+        label(for="contact_name") Your Name
+        input#contact_name(type="text", name="name")
+    .form-group
+        label(for="contact_email") Email
+        input#contact_email(type="text", name="email", placeholder="you@yours.com")
+    .form-group
+        label(for="contact_company") Company
+        input#contact_company(type="text", name="company", placeholder="Acme Inc.")
+    .form-group
+        label(for="contact_message") Message
+        textarea#contact_message(name="message", placeholder="Message")
+    .form-group.actions
+        button(type="submit") Contact Me
+    input(type="hidden" name="_subject" value="Contact on Emarref")
+    input(type="text" name="_gotcha" style="display:none;", value="Nope")

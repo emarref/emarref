@@ -1,0 +1,43 @@
+{
+  "name": "emarref.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "babel-preset-env": "^1.2.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.4.0",
+    "babel-preset-es2015-webpack": "^6.4.3",
+    "concurrently": "^3.4.0",
+    "jstransformer-scss": "^0.1.4",
+    "node-sass": "^4.5.0",
+    "pug-cli": "^1.0.0-alpha6",
+    "webpack": "^2.2.1"
+  },
+  "scripts": {
+    "views": "pug -Po public -b src/views src/views/index.pug",
+    "views-watch": "pug -wo public -b src/views src/views/index.pug",
+
+    "styles": "node-sass --output-style compressed -o public/css src/style/style.scss",
+    "styles-watch": "node-sass -wro public/css src/style/style.scss",
+
+    "scripts": "webpack -p --config webpack.config.js",
+    "scripts-watch": "webpack -w --config webpack.config.js",
+
+    "assets": "rsync -vruz assets/ public/",
+
+    "build": "concurrently \"yarn views\" \"yarn styles\" \"yarn scripts -p\" \"yarn assets\"",
+    "start": "concurrently --kill-others \"yarn views-watch\" \"yarn styles-watch\" \"yarn scripts-watch\" \"php -S localhost:8080 -t public\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emarref/emarref.github.io.git"
+  },
+  "author": "Malcolm Fell <emarref@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emarref/emarref.github.io/issues"
+  },
+  "homepage": "https://github.com/emarref/emarref.github.io#readme"
+}
