@@ -30,9 +30,9 @@
     "scripts": "webpack -p --config webpack.config.js",
     "scripts-watch": "webpack -w --config webpack.config.js",
     "assets": "rsync -vruz assets/ public/",
-    "build": "concurrently \"yarn views\" \"yarn styles\" \"yarn scripts -p\" \"yarn assets\"",
-    "start": "concurrently --kill-others \"yarn views-watch\" \"yarn styles-watch\" \"yarn scripts-watch\" \"php -S 0.0.0.0:8080 -t public\"",
-    "deploy": "yarn build && git-directory-deploy --directory public --branch master"
+    "build": "concurrently \"npm run views\" \"npm run styles\" \"npm run scripts -p\" \"npm run assets\"",
+    "start": "concurrently --kill-others \"npm run views-watch\" \"npm run styles-watch\" \"npm run scripts-watch\" \"php -S 0.0.0.0:8080 -t public\"",
+    "deploy": "npm run build && git-directory-deploy --directory public --branch master"
   },
   "repository": {
     "type": "git",
