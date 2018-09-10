@@ -32,7 +32,7 @@
     "assets": "rsync -vruz assets/ public/",
     "build": "concurrently \"npm run views\" \"npm run styles\" \"npm run scripts -p\" \"npm run assets\"",
     "start": "concurrently --kill-others \"npm run views-watch\" \"npm run styles-watch\" \"npm run scripts-watch\" \"php -S 0.0.0.0:8080 -t public\"",
-    "deploy": "npm run build && git-directory-deploy --directory public --branch master"
+    "deploy": "yarn build && git-directory-deploy --directory public --branch master"
   },
   "repository": {
     "type": "git",
