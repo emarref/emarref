@@ -28,10 +28,10 @@
     "views-watch": "pug -Pwo public -b src/views src/views/index.pug",
     "styles": "node-sass --output-style compressed -o public/css src/style/style.scss && postcss ./public/css/style.css -u autoprefixer -o ./public/css/style.css --no-map",
     "styles-watch": "node-sass -wro public/css src/style/style.scss",
-    "scripts": "webpack -p --config webpack.config.js",
+    "scripts": "webpack --config webpack.config.js",
     "scripts-watch": "webpack -w --config webpack.config.js",
     "assets": "rsync -vruz assets/ public/",
-    "build": "concurrently \"yarn run views\" \"yarn run styles\" \"yarn run scripts -p\" \"yarn run assets\"",
+    "build": "concurrently \"yarn run views\" \"yarn run styles\" \"yarn run scripts\" \"yarn run assets\"",
     "start": "concurrently --kill-others \"yarn run views-watch\" \"yarn run styles-watch\" \"yarn run scripts-watch\" \"yarn run http-server public\"",
     "deploy": "yarn build && git-directory-deploy --directory public"
   },
