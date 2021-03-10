@@ -1,6 +1,7 @@
 var path = require('path');
 
 module.exports = {
+  mode: 'production',
   entry: './src/js/main.js',
   output: {
     filename: 'main.js',
@@ -13,7 +14,11 @@ module.exports = {
         exclude: [/node_modules/],
         use: [{
           loader: 'babel-loader',
-          options: { presets: ['es2015'] }
+          options: { 
+            presets: [
+              ['@babel/preset-env', { targets: 'defaults' }]
+            ]  
+          }
         }],
       }
     ]

@@ -11,14 +11,17 @@
     "concurrently": "^6.0.0",
     "css-loader": "^5.1.2",
     "git-directory-deploy": "^1.5.1",
+    "http-server": "^0.12.3",
     "jstransformer-scss": "^1.0.0",
     "node-sass": "^5.0.0",
+    "postcss": "^8.2.8",
     "postcss-cli": "^8.3.1",
     "postcss-loader": "^5.1.0",
     "pug-cli": "^1.0.0-alpha6",
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",
-    "webpack": "^5.24.4"
+    "webpack": "^5.24.4",
+    "webpack-cli": "^4.5.0"
   },
   "scripts": {
     "views": "pug -o public -b src/views src/views/index.pug",
@@ -28,8 +31,8 @@
     "scripts": "webpack -p --config webpack.config.js",
     "scripts-watch": "webpack -w --config webpack.config.js",
     "assets": "rsync -vruz assets/ public/",
-    "build": "concurrently \"npm run views\" \"npm run styles\" \"npm run scripts -p\" \"npm run assets\"",
-    "start": "concurrently --kill-others \"npm run views-watch\" \"npm run styles-watch\" \"npm run scripts-watch\" \"php -S 0.0.0.0:8080 -t public\"",
+    "build": "concurrently \"yarn run views\" \"yarn run styles\" \"yarn run scripts -p\" \"yarn run assets\"",
+    "start": "concurrently --kill-others \"yarn run views-watch\" \"yarn run styles-watch\" \"yarn run scripts-watch\" \"yarn run http-server public\"",
     "deploy": "yarn build && git-directory-deploy --directory public"
   },
   "repository": {
