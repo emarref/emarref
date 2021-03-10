@@ -43,8 +43,11 @@ $(function () {
         $.ajax({
             url: contactForm.attr('action'),
             data: contactForm.serialize(),
-            method: "POST",
-            dataType: 'json'
+            method: 'POST',
+            dataType: 'json',
+            headers: {
+                'Accept': 'application/json'
+            }
         }).then((result) => {
             toastr.success('I\'ll be in touch shortly', 'Thanks');
             setTimeout(() => modal.hide(), 2000);
