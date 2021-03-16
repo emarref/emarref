@@ -1,6 +1,6 @@
 html, body {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     margin: 0;
     padding: 0;
 }
@@ -17,8 +17,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
 }
+
 
 .social {
     display: flex;
@@ -71,6 +72,7 @@ body {
     align-items: center;
     padding: 0;
     flex-wrap: wrap;
+    justify-content: center;
     margin: -.5em;
 
     img {
@@ -108,5 +110,9 @@ button {
 
     .information {
         text-align: left;
+    }
+
+    .portfolio {
+        justify-content: left;        
     }
 }
