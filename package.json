@@ -32,10 +32,9 @@
     "scripts": "webpack --config webpack.config.js",
     "scripts-watch": "webpack -w --config webpack.config.js",
     "assets": "rsync -vruz assets/ public/",
-    "build": "concurrently \"yarn run views\" \"yarn run styles\" \"yarn run scripts\" \"yarn run assets\"",
-    "start": "concurrently --kill-others \"yarn run views-watch\" \"yarn run styles-watch\" \"yarn run scripts-watch\" \"yarn run serve\"",
-    "serve": "here -d public",
-    "deploy": "yarn build && git-directory-deploy --directory public"
+    "build": "concurrently \"npm run views\" \"npm run styles\" \"npm run scripts\" \"npm run assets\"",
+    "start": "concurrently --kill-others \"npm run views-watch\" \"npm run styles-watch\" \"npm run scripts-watch\" \"npm run serve\"",
+    "serve": "here -d public"
   },
   "repository": {
     "type": "git",
