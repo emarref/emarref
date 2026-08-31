@@ -1,0 +1,142 @@
+@import 'modern-normalize';
+
+body {
+  margin: 0;
+  color: white;
+  font-family: Lato, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  background-image:
+    linear-gradient(to bottom right, rgb(211 131 18 / 85%), rgb(168 50 121 / 85%)),
+    url('/images/bridge.jpg');
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+
+@media (min-width: 992px) {
+  body {
+    font-weight: 100;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 100;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+  margin: 0 1em;
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .links {
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin: 0.5em;
+      padding: 0;
+    }
+
+    img {
+      width: 32px;
+      opacity: 0.5;
+      transition: opacity 0.25s;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+#avatar {
+  width: 100px;
+  border: solid white 1px;
+  border-radius: 50%;
+}
+
+.information {
+  text-align: center;
+
+  h1 {
+    margin: 0;
+  }
+}
+
+.portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  margin: -0.5em;
+  padding: 0;
+  list-style: none;
+
+  img {
+    margin: 0.5em;
+    opacity: 0.5;
+    transition: opacity 0.25s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .content {
+    flex-direction: row;
+  }
+
+  #avatar {
+    width: auto;
+    margin: 1em;
+  }
+
+  .information {
+    text-align: left;
+  }
+
+  .portfolio {
+    justify-content: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
